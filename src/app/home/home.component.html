@@ -1,0 +1,836 @@
+<!-- 顶栏 -->
+<header class="top-bar no-title">
+  <a class="btn-top back">[返回]</a>
+  <h1 class="top-title">#top_title#</h1>
+  <div class="top-logo">[腾讯动漫LOGO]</div>
+  <div class="padding"></div>
+  <a class="btn-top search" href="/search/index">[搜索]</a>
+  <a class="btn-top menu" (click)="navTriger()">[菜单]</a>
+</header>
+<!-- 导航菜单 -->
+<div class="nav-menu-box" [ngClass]="{'show': navShow}" [ngStyle]="{'display': navSwitch ? 'block' : 'none' }">
+  <div class="nav-menu-bg"></div>
+  <div class="nav-menu">
+    <ul class="nav-list">
+      <li class="item">
+        <a class="link top-bar-collect" href="javascript:void(0)">
+          <i class="icon collect">[袋]</i>
+          <span class="name">收藏</span>
+        </a>
+      </li>
+      <li class="item">
+        <a class="link" href="/bookshelf/index?type=his">
+          <i class="icon history">[钟]</i>
+          <span class="name">历史</span>
+        </a>
+      </li>
+      <li class="item">
+        <a class="link" href="/category/index">
+          <i class="icon category">[分]</i>
+          <span class="name">分类</span>
+        </a>
+      </li>
+      <li class="item">
+        <a class="link" href="/rank/index?type=rise">
+          <i class="icon rank">[奖]</i>
+          <span class="name">排行</span>
+        </a>
+      </li>
+      <li class="item">
+        <a class="link" href="/home/buyList">
+          <i class="icon bought">[买]</i>
+          <span class="name">已购</span>
+        </a>
+      </li>
+      <li class="item">
+        <a class="link support" href="javascript:void(0);">
+          <i class="icon feedback">[反馈]</i>
+          <span class="name">反馈</span>
+        </a>
+      </li>
+    </ul>
+    <a class="btn-home" href="javascript:void(0)">[个人中心]</a>
+  </div>
+</div>
+<!-- 主轮播 -->
+<section class="banner-menu under-top-bar">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" *ngFor="let data of slides">
+        <img class="cover" [src]="data.url">
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 广告位 -->
+<section class="adv mod-item">
+  <div class="adv-overflow-block"></div>
+  <div class="adv-img">
+    <a class="adv-link" href="javascript:void(0);">
+      <img class="cover-image" src="https://manhua.qpic.cn/operation/0/06_11_30_9ca21bcd57f2dcff4afebd6b03976e67_1578281405477.png/0">
+    </a>
+  </div>
+</section>
+<!-- 精品·推荐 -->
+<section class="recommend mod-item">
+  <h2 class="sub-title">
+    <strong class="title-content">精品·推荐</strong>
+  </h2>
+  <ul class="comic-list col-2 recommend-list" id="module_956791443">
+    <li class="comic-item item-1">
+      <a class="comic-link" href="/comic/index/id/633591">
+        <div class="comic-cover">
+          <img class="cover-image" src="https://manhua.qpic.cn/operation/0/10_18_25_d3e9c3581c7414a334a5cac31c937cda_1578651919347.jpg/0" alt="">
+        </div>
+        <div class="comic-content">
+          <strong class="comic-title">极道宗师</strong>
+          <small class="comic-desc">宗师尚在，国术不死</small>
+        </div>
+      </a>
+    </li>
+    <li class="comic-item item-2">
+      <a class="comic-link" href="/comic/index/id/642777">
+        <div class="comic-cover">
+          <img class="cover-image" src="https://manhua.qpic.cn/operation/0/05_17_30_3d2c3488b0b4336ce21d37158da0d9bc_1572946242004.jpg/0" alt="">
+        </div>
+        <div class="comic-content">
+          <strong class="comic-title">致命武力</strong>
+          <small class="comic-desc">一个沙雕混混和高冷学霸在杀戮轮回中努力生存</small>
+        </div>
+      </a>
+    </li>
+    <li class="comic-item item-3">
+      <a class="comic-link" href="/comic/index/id/642091">
+        <div class="comic-cover">
+          <img class="cover-image" src="https://manhua.qpic.cn/operation/0/20_10_54_46108bd964f3faf4faca492ef5bf2015_1576810487905.jpg/0" alt="">
+        </div>
+        <div class="comic-content">
+          <strong class="comic-title">最强原始人</strong>
+          <small class="comic-desc">这是一个不一样的原始世界</small>
+        </div>
+      </a>
+    </li>
+    <li class="comic-item item-4">
+      <a class="comic-link" href="/comic/index/id/642093">
+        <div class="comic-cover">
+          <img class="cover-image" src="https://manhua.qpic.cn/operation/0/05_17_30_ebf44199cd9d7c040a6c0a511ee223ae_1572946209328.jpg/0" alt="">
+        </div>
+        <div class="comic-content">
+          <strong class="comic-title">早安，亿万萌妻</strong>
+          <small class="comic-desc">没毕业就要结婚！老公还是个霸总</small>
+        </div>
+      </a>
+    </li>
+  </ul>
+
+  <div class="btn-replacement-data">[换一批]</div>
+</section>
+<!-- 热门·OMG -->
+<section class="hot-comic mod-item">
+  <h2 class="sub-title">
+    <strong class="title-content"> 热门·OMG…盘它！</strong>
+  </h2>
+
+  <ul class="comic-list col-3 recommend-list" id="module_956863317">
+    <li class="comic-item item-1">
+      <a class="comic-link" href="/comic/index/id/646200">
+        <div class="comic-cover">
+          <img class="cover-image" src="https://manhua.qpic.cn/operation/0/10_11_23_2b298593f57128b11302bf3d8a06a355_1578626639767.jpg/0">
+        </div>
+        <div class="comic-content">
+          <strong class="comic-title">W战歌</strong>
+          <small class="comic-desc">热血  恐怖</small>
+        </div>
+      </a>
+    </li>
+    <li class="comic-item item-2">
+      <a class="comic-link" href="/comic/index/id/645971">
+        <div class="comic-cover">
+          <img class="cover-image" src="https://manhua.qpic.cn/operation/0/10_18_08_60f9cc0081e50547ecce8194d52e1e81_1578650899810.jpg/0">
+        </div>
+        <div class="comic-content">
+          <strong class="comic-title">混沌丹神</strong>
+          <small class="comic-desc">玄幻  热血</small>
+        </div>
+      </a>
+    </li>
+    <li class="comic-item item-3">
+      <a class="comic-link" href="/comic/index/id/638473">
+        <div class="comic-cover">
+          <img class="cover-image" src="https://manhua.qpic.cn/operation/0/05_17_14_503aefe64c13f3e38d04407e27173fd7_1572945248213.jpg/0">
+        </div>
+        <div class="comic-content">
+          <strong class="comic-title">最强枭雄系统</strong>
+          <small class="comic-desc">都市  热血</small>
+        </div>
+      </a>
+    </li>
+    <li class="comic-item item-4">
+      <a class="comic-link" href="/comic/index/id/634961">
+        <div class="comic-cover">
+          <img class="cover-image" src="https://manhua.qpic.cn/operation/0/05_17_11_3196a79f5af420425ff30b3fda7b5e78_1572945108515.jpg/0">
+        </div>
+        <div class="comic-content">
+          <strong class="comic-title">琅寰书院</strong>
+          <small class="comic-desc">玄幻  古风</small>
+        </div>
+      </a>
+    </li>
+    <li class="comic-item item-5">
+      <a class="comic-link" href="/comic/index/id/644492">
+        <div class="comic-cover">
+          <img class="cover-image" src="https://manhua.qpic.cn/operation/0/06_13_23_6447c673ec4ed2226bcd719b7dd546c6_1573017804811.jpg/0">
+        </div>
+        <div class="comic-content">
+          <strong class="comic-title">萌宝来袭：妈咪我爹地呢？</strong>
+          <small class="comic-desc">都市  恋爱</small>
+        </div>
+      </a>
+    </li>
+    <li class="comic-item item-6">
+      <a class="comic-link" href="/comic/index/id/639877">
+        <div class="comic-cover">
+          <img class="cover-image" src="https://manhua.qpic.cn/operation/0/05_17_12_8d2a47715efaec0c6440a61f48ac84b4_1572945120660.jpg/0">
+        </div>
+        <div class="comic-content">
+          <strong class="comic-title">悠哉兽世：种种田，生生崽</strong>
+          <small class="comic-desc">恋爱  玄幻</small>
+        </div>
+      </a>
+    </li>
+  </ul>
+
+  <div class="btn-replacement-data">[换一批]</div>
+</section>
+<!-- 新作 -->
+<section class="janpan-comic mod-item">
+  <h2 class="sub-title">
+    <strong class="title-content">新作·我的青春是黑白色</strong>
+  </h2>
+
+  <ul class="comic-list col-1-3" id="module_432590450">
+    <li class="comic-item comic-item-1 item-0">
+      <a class="comic-link" href="/comic/index/id/626439">
+        <div class="comic-cover"><img class="cover-image" src="https://manhua.qpic.cn/operation/0/11_15_09_3285bd4078d4eb61be5724f471649dee_1536649763455.jpg/0"></div><div class="comic-content">
+          <strong class="comic-title">xxxHOLiC/四月一日灵异事件簿</strong><small class="comic-desc">
+            日本讲谈社漫画作品©CLAMP･ShigatsuTsuitachi CO.,LTD.
+            【简介】由于天生的体制原因，整日被妖怪缠身，因此而无比苦恼的四月一日君寻，在一次偶然下误闯进一家神秘的店。这是一家能够实现愿望的店，相对的你要付出代价，与其相对应的代价……
+          </small>
+        </div>
+      </a>
+    </li>
+    <li class="comic-item comic-item-1-3 item-1"><a class="comic-link" href="/comic/index/id/542004"><div class="comic-cover"><img class="cover-image" src="https://manhua.qpic.cn/operation/0/11_15_09_6f960cc7f28a003ed7954cb78d6adb23_1536649761354.jpg/0"></div><div class="comic-content"><strong class="comic-title">守护甜心</strong><small class="comic-desc">冒险  校园</small></div></a></li>
+    <li class="comic-item comic-item-1-3 item-2"><a class="comic-link" href="/comic/index/id/623502"><div class="comic-cover"><img class="cover-image" src="https://manhua.qpic.cn/operation/0/05_17_11_3e17f1599d76bbfbe8b3ca2a92176c72_1572945095428.jpg/0"></div><div class="comic-content"><strong class="comic-title">xxxHOLiC・戻</strong><small class="comic-desc">玄幻  热血</small></div></a></li>
+    <li class="comic-item comic-item-1-3 item-3"><a class="comic-link" href="/comic/index/id/549573"><div class="comic-cover"><img class="cover-image" src="https://manhua.qpic.cn/operation/0/11_15_09_ab2c4bce4fd6f361ee957cef4beb9ae5_1536649769949.jpg/0"></div><div class="comic-content"><strong class="comic-title">噬谎者</strong><small class="comic-desc">悬疑  推理</small></div></a></li>
+  </ul>
+
+  <div class="btn-replacement-data">[换一批]</div>
+</section>
+<!-- 排行榜 -->
+<section class="rank-comic mod-item">
+  <h2 class="sub-title">
+    <strong class="title-content">排行榜</strong>
+  </h2>
+  <div class="rank-header">
+    <div class="rank-heizi-bg"></div>
+    <div class="top">
+      TOP
+    </div>
+    <div class="rank-swiper-title-list">
+      <div class="rank-swiper-title" (click)="rank(0)">
+        TOP10
+      </div>
+      <div class="rank-swiper-title" (click)="rank(1)">
+        飙升榜
+      </div>
+      <div class="rank-swiper-title" (click)="rank(2)">
+        日漫
+      </div>
+      <div class="rank-swiper-title" (click)="rank(3)">
+        欧美
+      </div>
+      <i class="index-bottom-tag" id="index_bottom_tag" [ngStyle]="{'left':left[index]}"></i>
+    </div>
+  </div>
+  <div class="rank-container">
+    <div class="swiper-wrapper rank-wrapper">
+      <div class="swiper-slide rank-type rank-type-TOP100 rank-0-1">
+        <div class="rank-item item-0-1-1">
+          <a class="comic-link" href="/comic/index/id/638790">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/05_17_15_0894392d79da3bb451967148018f0071_1572945310415.jpg/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">0-1-1</strong>
+                <small class="comic-popularity">38.5亿人气值</small>
+                <small class="comic-desc">金银双色花纹的蛋里孵化出一个和人类一模一样的孩子</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-1"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="rank-item item-0-1-2">
+          <a class="comic-link" href="/comic/index/id/505430">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/11_15_09_79b7f3a6579c62b85ee0be904efa0638_1536649785112.jpg/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">航海王</strong>
+                <small class="comic-popularity">193.7亿人气值</small>
+                <small class="comic-desc">我要成为航海王！</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-2"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="rank-item item-0-1-3">
+          <a class="comic-link" href="/comic/index/id/17114">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/14_12_14_c5904279ab84f4d7b59641053c11c221_1547439263343.jpg/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">尸兄（我叫白小飞）</strong>
+                <small class="comic-popularity">261.2亿人气值</small>
+                <small class="comic-desc">逗比男遇上惊奇怪事</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-3"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="rank-item item-0-1-4">
+          <a class="comic-link" href="/comic/index/id/540627">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/11_16_43_7a4a9b0c2025ce808298ad7b4a034d13_1539247398951.png/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">通灵妃</strong>
+                <small class="comic-popularity">414.1亿人气值</small>
+                <small class="comic-desc">我的妃子是通灵少女</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-4"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="swiper-slide rank-type rank-type-TOP100 rank-0-2">
+        <div class="rank-item item-0-2-1">
+          <a class="comic-link" href="/comic/index/id/531490">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/05_15_45_0b663a8d1b8e39d453ed5d6ecba6be72_1572939959446.jpg/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">0-2-1</strong>
+                <small class="comic-popularity">195亿人气值</small>
+                <small class="comic-desc">身怀异术该何去何从</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-5"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="rank-item item-0-2-2">
+          <a class="comic-link" href="/comic/index/id/630166">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/05_17_15_b8f0f1ad2bc9867df8dd17da66cdb691_1572945313481.jpg/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">19天</strong>
+                <small class="comic-popularity">105.2亿人气值</small>
+                <small class="comic-desc">成长的青春物语</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-6"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="rank-item item-0-2-3">
+          <a class="comic-link" href="/comic/index/id/518333">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/05_17_11_b7d2deb792c56af05247994ca91b3049_1572945105161.jpg/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">狐妖小红娘</strong>
+                <small class="comic-popularity">155亿人气值</small>
+                <small class="comic-desc">呆萌狐狸爱上二货道士</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-7"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="rank-item item-0-2-4">
+          <a class="comic-link" href="/comic/index/id/511915">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/05_17_14_a14870e83b668b9557484bfe6d747360_1572945290018.jpg/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">中国惊奇先生</strong>
+                <small class="comic-popularity">205.1亿人气值</small>
+                <small class="comic-desc">屌丝道士遇到爱</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-8"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="swiper-slide rank-type rank-type-TOP100 rank-1-1">
+        <div class="rank-item item-0-1-1">
+          <a class="comic-link" href="/comic/index/id/638790">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/05_17_15_0894392d79da3bb451967148018f0071_1572945310415.jpg/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">1-1</strong>
+                <small class="comic-popularity">38.5亿人气值</small>
+                <small class="comic-desc">金银双色花纹的蛋里孵化出一个和人类一模一样的孩子</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-1"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="rank-item item-0-1-2">
+          <a class="comic-link" href="/comic/index/id/505430">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/11_15_09_79b7f3a6579c62b85ee0be904efa0638_1536649785112.jpg/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">航海王</strong>
+                <small class="comic-popularity">193.7亿人气值</small>
+                <small class="comic-desc">我要成为航海王！</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-2"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="rank-item item-0-1-3">
+          <a class="comic-link" href="/comic/index/id/17114">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/14_12_14_c5904279ab84f4d7b59641053c11c221_1547439263343.jpg/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">尸兄（我叫白小飞）</strong>
+                <small class="comic-popularity">261.2亿人气值</small>
+                <small class="comic-desc">逗比男遇上惊奇怪事</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-3"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="rank-item item-0-1-4">
+          <a class="comic-link" href="/comic/index/id/540627">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/11_16_43_7a4a9b0c2025ce808298ad7b4a034d13_1539247398951.png/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">通灵妃</strong>
+                <small class="comic-popularity">414.1亿人气值</small>
+                <small class="comic-desc">我的妃子是通灵少女</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-4"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="swiper-slide rank-type rank-type-TOP100 rank-1-2">
+        <div class="rank-item item-0-2-1">
+          <a class="comic-link" href="/comic/index/id/531490">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/05_15_45_0b663a8d1b8e39d453ed5d6ecba6be72_1572939959446.jpg/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">1-2</strong>
+                <small class="comic-popularity">195亿人气值</small>
+                <small class="comic-desc">身怀异术该何去何从</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-5"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="rank-item item-0-2-2">
+          <a class="comic-link" href="/comic/index/id/630166">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/05_17_15_b8f0f1ad2bc9867df8dd17da66cdb691_1572945313481.jpg/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">19天</strong>
+                <small class="comic-popularity">105.2亿人气值</small>
+                <small class="comic-desc">成长的青春物语</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-6"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="rank-item item-0-2-3">
+          <a class="comic-link" href="/comic/index/id/518333">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/05_17_11_b7d2deb792c56af05247994ca91b3049_1572945105161.jpg/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">狐妖小红娘</strong>
+                <small class="comic-popularity">155亿人气值</small>
+                <small class="comic-desc">呆萌狐狸爱上二货道士</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-7"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="rank-item item-0-2-4">
+          <a class="comic-link" href="/comic/index/id/511915">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/05_17_14_a14870e83b668b9557484bfe6d747360_1572945290018.jpg/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">中国惊奇先生</strong>
+                <small class="comic-popularity">205.1亿人气值</small>
+                <small class="comic-desc">屌丝道士遇到爱</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-8"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="swiper-slide rank-type rank-type-TOP100 rank-2-1">
+        <div class="rank-item item-0-1-1">
+          <a class="comic-link" href="/comic/index/id/638790">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/05_17_15_0894392d79da3bb451967148018f0071_1572945310415.jpg/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">2-1</strong>
+                <small class="comic-popularity">38.5亿人气值</small>
+                <small class="comic-desc">金银双色花纹的蛋里孵化出一个和人类一模一样的孩子</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-1"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="rank-item item-0-1-2">
+          <a class="comic-link" href="/comic/index/id/505430">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/11_15_09_79b7f3a6579c62b85ee0be904efa0638_1536649785112.jpg/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">航海王</strong>
+                <small class="comic-popularity">193.7亿人气值</small>
+                <small class="comic-desc">我要成为航海王！</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-2"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="rank-item item-0-1-3">
+          <a class="comic-link" href="/comic/index/id/17114">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/14_12_14_c5904279ab84f4d7b59641053c11c221_1547439263343.jpg/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">尸兄（我叫白小飞）</strong>
+                <small class="comic-popularity">261.2亿人气值</small>
+                <small class="comic-desc">逗比男遇上惊奇怪事</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-3"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="rank-item item-0-1-4">
+          <a class="comic-link" href="/comic/index/id/540627">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/11_16_43_7a4a9b0c2025ce808298ad7b4a034d13_1539247398951.png/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">通灵妃</strong>
+                <small class="comic-popularity">414.1亿人气值</small>
+                <small class="comic-desc">我的妃子是通灵少女</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-4"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="swiper-slide rank-type rank-type-TOP100 rank-2-2">
+        <div class="rank-item item-0-2-1">
+          <a class="comic-link" href="/comic/index/id/531490">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/05_15_45_0b663a8d1b8e39d453ed5d6ecba6be72_1572939959446.jpg/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">2-2</strong>
+                <small class="comic-popularity">195亿人气值</small>
+                <small class="comic-desc">身怀异术该何去何从</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-5"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="rank-item item-0-2-2">
+          <a class="comic-link" href="/comic/index/id/630166">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/05_17_15_b8f0f1ad2bc9867df8dd17da66cdb691_1572945313481.jpg/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">19天</strong>
+                <small class="comic-popularity">105.2亿人气值</small>
+                <small class="comic-desc">成长的青春物语</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-6"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="rank-item item-0-2-3">
+          <a class="comic-link" href="/comic/index/id/518333">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/05_17_11_b7d2deb792c56af05247994ca91b3049_1572945105161.jpg/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">狐妖小红娘</strong>
+                <small class="comic-popularity">155亿人气值</small>
+                <small class="comic-desc">呆萌狐狸爱上二货道士</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-7"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="rank-item item-0-2-4">
+          <a class="comic-link" href="/comic/index/id/511915">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/05_17_14_a14870e83b668b9557484bfe6d747360_1572945290018.jpg/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">中国惊奇先生</strong>
+                <small class="comic-popularity">205.1亿人气值</small>
+                <small class="comic-desc">屌丝道士遇到爱</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-8"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="swiper-slide rank-type rank-type-TOP100 rank-3-1">
+        <div class="rank-item item-0-1-1">
+          <a class="comic-link" href="/comic/index/id/638790">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/05_17_15_0894392d79da3bb451967148018f0071_1572945310415.jpg/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">3-1</strong>
+                <small class="comic-popularity">38.5亿人气值</small>
+                <small class="comic-desc">金银双色花纹的蛋里孵化出一个和人类一模一样的孩子</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-1"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="rank-item item-0-1-2">
+          <a class="comic-link" href="/comic/index/id/505430">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/11_15_09_79b7f3a6579c62b85ee0be904efa0638_1536649785112.jpg/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">航海王</strong>
+                <small class="comic-popularity">193.7亿人气值</small>
+                <small class="comic-desc">我要成为航海王！</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-2"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="rank-item item-0-1-3">
+          <a class="comic-link" href="/comic/index/id/17114">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/14_12_14_c5904279ab84f4d7b59641053c11c221_1547439263343.jpg/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">尸兄（我叫白小飞）</strong>
+                <small class="comic-popularity">261.2亿人气值</small>
+                <small class="comic-desc">逗比男遇上惊奇怪事</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-3"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="rank-item item-0-1-4">
+          <a class="comic-link" href="/comic/index/id/540627">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/11_16_43_7a4a9b0c2025ce808298ad7b4a034d13_1539247398951.png/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">通灵妃</strong>
+                <small class="comic-popularity">414.1亿人气值</small>
+                <small class="comic-desc">我的妃子是通灵少女</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-4"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="swiper-slide rank-type rank-type-TOP100 rank-3-2">
+        <div class="rank-item item-0-2-1">
+          <a class="comic-link" href="/comic/index/id/531490">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/05_15_45_0b663a8d1b8e39d453ed5d6ecba6be72_1572939959446.jpg/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">3-2</strong>
+                <small class="comic-popularity">195亿人气值</small>
+                <small class="comic-desc">身怀异术该何去何从</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-5"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="rank-item item-0-2-2">
+          <a class="comic-link" href="/comic/index/id/630166">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/05_17_15_b8f0f1ad2bc9867df8dd17da66cdb691_1572945313481.jpg/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">19天</strong>
+                <small class="comic-popularity">105.2亿人气值</small>
+                <small class="comic-desc">成长的青春物语</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-6"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="rank-item item-0-2-3">
+          <a class="comic-link" href="/comic/index/id/518333">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/05_17_11_b7d2deb792c56af05247994ca91b3049_1572945105161.jpg/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">狐妖小红娘</strong>
+                <small class="comic-popularity">155亿人气值</small>
+                <small class="comic-desc">呆萌狐狸爱上二货道士</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-7"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="rank-item item-0-2-4">
+          <a class="comic-link" href="/comic/index/id/511915">
+            <div class="comic-cover">
+              <img class="cover-image" src="https://manhua.qpic.cn/operation/0/05_17_14_a14870e83b668b9557484bfe6d747360_1572945290018.jpg/0">
+            </div>
+            <div class="comic-content">
+              <div class="comic-info">
+                <strong class="comic-title">中国惊奇先生</strong>
+                <small class="comic-popularity">205.1亿人气值</small>
+                <small class="comic-desc">屌丝道士遇到爱</small>
+              </div>
+              <div class="comic-ranking">
+                <i class="icon-place icon-place-8"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 底部区域 -->
+<footer class="bottom">
+  <p>到底喽</p>
+  <p>海量漫画，高清画质一览无余</p>
+</footer>
+<!-- APP引导语 -->
+<section class="app-guiding-swiper bottom-guiding">
+  <div class="bottom-guiding-swiper">
+    <div class="swiper-wrapper bottom-guiding-wrapper">
+      <div class="swiper-slide bottom-guiding-slide" *ngFor="let slide of slides">
+        <img [src]="slide.url" [title]="slide.title" class="guiding-comic-cover">
+        <div class="guiding-desc">《斗罗大陆4终极斗罗》<br>唐家三少最新篇章开启</div>
+        <div class="guiding-btn">点击打开</div>
+      </div>
+    </div>
+  </div>
+</section>
