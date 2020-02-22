@@ -1,6 +1,7 @@
 # subject
 This is a learning project show how to use swiperjs with angular 9
 
+![Alt text](index.gif)
 
 # FrontEnd
 
